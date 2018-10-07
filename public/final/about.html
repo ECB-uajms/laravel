@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<script language="javascript">
+function contacto(){    
+       /// Aqui podemos enviarle alguna variable a nuestro script PHP
+    var variable_post="Mi texto recargado";
+       /// Invocamos a nuestro script PHP
+    $.post("contacto.html", { variable: variable_post }, function(data){
+       /// Ponemos la respuesta de nuestro script en el DIV recargado
+    $("#recargados").html(data);
+    });         
+}
+function QA(){    
+       /// Aqui podemos enviarle alguna variable a nuestro script PHP
+    var variable_post="Mi texto recargado";
+       /// Invocamos a nuestro script PHP
+    $.post("QA.html", { variable: variable_post }, function(data){
+       /// Ponemos la respuesta de nuestro script en el DIV recargado
+    $("#recargados").html(data);
+    });
+}
+function dev(){    
+       /// Aqui podemos enviarle alguna variable a nuestro script PHP
+    var variable_post="Mi texto recargado";
+       /// Invocamos a nuestro script PHP
+    $.post("dev.html", { variable: variable_post }, function(data){
+       /// Ponemos la respuesta de nuestro script en el DIV recargado
+    $("#recargados").html(data);
+    });
+}
+function Pagos(){    
+       /// Aqui podemos enviarle alguna variable a nuestro script PHP
+    var variable_post="Mi texto recargado";
+       /// Invocamos a nuestro script PHP
+    $.post("pagos.html", { variable: variable_post }, function(data){
+       /// Ponemos la respuesta de nuestro script en el DIV recargado
+    $("#recargados").html(data);
+    });
+}
+function envios(){    
+       /// Aqui podemos enviarle alguna variable a nuestro script PHP
+    var variable_post="Mi texto recargado";
+       /// Invocamos a nuestro script PHP
+    $.post("envios.html", { variable: variable_post }, function(data){
+       /// Ponemos la respuesta de nuestro script en el DIV recargado
+    $("#recargados").html(data);
+    });
+}
+function ga(){    
+       /// Aqui podemos enviarle alguna variable a nuestro script PHP
+    var variable_post="Mi texto recargado";
+       /// Invocamos a nuestro script PHP
+    $.post("garantia.html", { variable: variable_post }, function(data){
+       /// Ponemos la respuesta de nuestro script en el DIV recargado
+    $("#recargados").html(data);
+    });
+}
+</script>
+</head>
+<main >
+ 
+  <section id="head">      
+  <input type="checkbox" id="menu-lat">
+        <label class="icon icon-menu" for="menu-lat"></label>
+        <div class="menuv">
+         <ul>
+        <li><a >Cliente</a>
+        <ul>
+        <li><a  onclick="javascript:contacto();" >Contacto</a></li>
+            <li><a onclick="javascript:dev();">Politica de devolucion</a></li>
+            <li><a onclick="javascript:QA();">Preguntas y Respuestas</a></li>
+              </ul>
+        </li>
+
+      <li>
+        <a >Pagos</a>
+         <ul>
+            <li><a onclick="javascript:Pagos();">Metodos de pago</a></li>
+            <li><a onclick="javascript:envios();">Guia de Envios</a></li>
+            
+          </ul>
+      </li>
+      <li>
+        <a >Acerca de</a>
+        <ul>
+            <li><a onclick="javascript:ga();">Nuestra Garantia</a></li>
+          </ul>
+         </li>
+    </ul>
+
+</div>
+</section> 
+
+            <div id="recargados">
+             <div class="contenedor">
+                <h1 align="center">
+            Acerca de GeekShop.com</h1>
+        <br><br>
+                <p> GeekShop es uno de los sitios web lideres en Comercio electronico entregando una gran variedad de accesorios &amp; bienes de consumo globalmente. Una lugar para todas las principales marcas disponibles a su conveniencia. </br> </p>
+         <p> En geekshop.com nos esforzamos por alcanzar el nivel más alto de "Satisfacción del cliente" posible.Nuestra plataforma de comercio electrónico de vanguardia, equipo diverso con mucha experiencia, sistemas ágiles de almacén y un centro de atención al cliente de última generación le brindan al cliente
+            <p> • Amplia seleccion de productos<br/>
+                • Experia superior al momento de la compra<br>
+                • Entrega puntual de productosOn-time delivery of products<br>
+                • Rapida respuesta a cualquier consulta</p>
+                <br><br><br>
+                </p> </div>        
+            
+        
+                </div>
+                </div>
+        
+
+
+
+              
+                </main>
+                </html>
