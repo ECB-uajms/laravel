@@ -14,11 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get ('/ssd', function(){
-	return 'Hello World, ruta';
-});
+
 Route::get('prueba/{name}', 'PruebaController@prueba');
 
 Route::get('/prueba', 'PruebaController@show');
 Route::get('pp/{name}/apellido/{ap}', 'PruebaController@index');
-Route::resource('trainer','TrainerController');
+Route::resource('/trainers','TrainerController');
+Route::resource('/docente','DocenteController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('login/google', 'Auth\LoginController@redirectToProvider');
+//Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+Auth::routes();
+Route::get('/login/google/redirect','SocialController@redirect');
+Route::get('/login/google/callback','SocialController@callback');
+Route::get('/login/facebook/redirectf','SocialController@redirectf');
+Route::get('/login/facebook/callbackf','SocialController@callbackf');
+
