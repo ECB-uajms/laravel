@@ -20,7 +20,10 @@ Route::get('prueba/{name}', 'PruebaController@prueba');
 Route::get('/prueba', 'PruebaController@show');
 Route::get('pp/{name}/apellido/{ap}', 'PruebaController@index');
 Route::resource('/trainers','TrainerController');
-Route::resource('/docente','DocenteController');
+Route::resource('/shop/create','ShopController');
+Route::get('/games/create','GamesController@create');
+Route::get('/producto/create','ProductoController@create');
+Route::get('/pedido/create','PedidoController@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

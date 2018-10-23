@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form class='form-control' method='POST' action="/docentes">
+<form class='form-control' method='POST' action="/shop">
 		@csrf
 
 	<div class="form-group">
