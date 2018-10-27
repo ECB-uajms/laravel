@@ -66,7 +66,7 @@
                 </div>
                          <div class="card-footer text-center" >
                                                   
-                                 <a class="btn btn-facebook" href="/login/facebook/redirectf">
+                                 <a class="btn btn-facebook" href="/login/facebook">
                                     <i class="fa fa-facebook" ></i>
                                     login con facebook
                                 </a>
@@ -74,11 +74,12 @@
                                     <i class="fa fa-twitter" ></i>
                                     login con twitter
                                 </a>
-                                 <a class="btn btn-google" href="/login/google/redirect">
+                                 <a class="btn btn-google" href="/login/google">
                                     <i class="fa fa-google" ></i>
                                     login con google
                                 </a>
                         </div>
+                        
                               
             </div>
         </div>
