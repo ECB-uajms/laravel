@@ -1,16 +1,21 @@
-@extends('layouts.create')
+@extends('layouts.app')
 
-@section('title', 'Lista de Docente')
+@section('title', 'Producto')
 
 @section('content')
+<div class="row">
+@foreach($producto as $producto)
 
-<form class='form-control' method='POST' action="/producto">
-	<div class="form-group">
-		<label for="">Nombre</label>
-		
-		
-	</div>
-	<button type="submit" class="btn btn-primary">Guardar Nuevo</button>
+<div class="col-sm">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-tittle">{{$producto->name}}</h5>
+					<p class="card-text">{{$producto->cantidad}}</p>
+						<a href="#" class="btn btn-primary"> GO</a>
 	
-</form>
+			</div>
+		</div>
+	</div>
+
+	@endforeach
 @endsection
