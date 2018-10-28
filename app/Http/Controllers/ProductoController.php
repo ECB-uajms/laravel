@@ -36,15 +36,19 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-       
-
-
-       $producto = new Producto();
+       if ($request->hasFile('image')) {
+          $file =$request ->file('image');
+          $name = time().$file->getClientOriginalName();
+          $file->move(public_path().'/images/',$name);
+         
+       }
+        $producto = new Producto();
         $producto ->name=$request ->input('name');
         $producto ->cantidad=$request ->input('cantidad');
+        $producto ->image=$name;
         $producto-> save();
      
-        return view('saved');
+        return 'saved';
         //return $request->input('name');
     }
 
@@ -56,6 +60,9 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
+        $producto= Producto::find($id);
+
+        return view('producto.show',compact('producto'));
         //
     }
 

@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Registro de Productos') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/producto">
+                    <form class="form-group" method="POST" action="/producto" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -16,12 +16,13 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Imagen') }}</label>
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="col-md-6">
+                                <input id="image" type="file" class="form-control" name="image" value="{{ old('name') }}" required autofocus>
                             </div>
                         </div>
 
