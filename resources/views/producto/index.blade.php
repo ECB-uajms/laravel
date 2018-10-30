@@ -13,7 +13,7 @@
 				<h5 class="card-tittle">{{$producto->name}}</h5>
 					<p class="card-text">{{$producto->cantidad}}</p>
 						
-						<a href="/producto/{{$producto->id}}" class="btn btn-primary"> Ver mas...</a>
+						<a href="/producto/{{$producto->slug}}" class="btn btn-primary"> Ver mas...</a>
 	
 				</div>
 		</div>

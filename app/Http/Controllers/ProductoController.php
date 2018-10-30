@@ -58,9 +58,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Producto $producto)
     {
-        $producto= Producto::find($id);
+        //$producto= Producto::where('slug','=',$slug)->firstorFail();
 
         return view('producto.show',compact('producto'));
         //
@@ -72,9 +72,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Producto $producto)
     {
-        //
+       return view('producto.edit',compact('producto'));
     }
 
     /**
@@ -84,9 +84,21 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Producto $producto)
     {
-        //
+        
+
+        $producto ->fill($request->except('image'));
+        if ($request->hasFile('image')) {
+          $file =$request ->file('image');
+          $name = time().$file->getClientOriginalName();
+             $producto ->image=$name;
+          $file->move(public_path().'/images/',$name);
+         
+       }
+       
+        $producto->save();
+        return 'updated';
     }
 
     /**
