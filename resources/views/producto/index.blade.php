@@ -3,8 +3,10 @@
 @section('title', 'Producto')
 
 @section('content')
+@include('common.sucess')
 <div class="row">
 	@foreach($producto as $producto)
+
 	<div class="col-sm">
 		<div class="card text-center" style="width: 18rem;">
 			<img class="card-img-top mx-auto d-block" 

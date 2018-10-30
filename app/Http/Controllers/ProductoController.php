@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Http\Requests\StoreProductoRequest;
 class ProductoController extends Controller
 {
     /**
@@ -34,9 +35,9 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductoRequest $request)
     {
-       if ($request->hasFile('image')) {
+           if ($request->hasFile('image')) {
           $file =$request ->file('image');
           $name = time().$file->getClientOriginalName();
           $file->move(public_path().'/images/',$name);
@@ -45,10 +46,11 @@ class ProductoController extends Controller
         $producto = new Producto();
         $producto ->name=$request ->input('name');
         $producto ->cantidad=$request ->input('cantidad');
+        $producto ->slug=$request ->input('slug');
         $producto ->image=$name;
         $producto-> save();
      
-        return 'saved';
+        return redirect()->route('producto.index')->with('status','Producto Creado correctamente');
         //return $request->input('name');
     }
 
@@ -98,7 +100,7 @@ class ProductoController extends Controller
        }
        
         $producto->save();
-        return 'updated';
+        return redirect()->route('producto.show',[$producto])->with('status','Producto Actualizado correctamente');
     }
 
     /**
@@ -107,8 +109,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Producto $producto)
     {
-        //
+        $file_path= public_path().'/images/'.$producto->image;
+        \File::delete($file_path);
+        $producto->delete();
+           return redirect()->route('producto.index')->with('status','Producto Borrado');
     }
 }

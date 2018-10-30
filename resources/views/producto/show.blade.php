@@ -3,7 +3,7 @@
 @section('title', 'Producto')
 
 @section('content')
-
+@include('common.sucess')
 	
 			<img class="card-img-top mx-auto d-block" 
 			src="/images/{{$producto->image}}" height="800px" width="600px"	 style=" background-color: #EFEFEF; margin:8px;" alt="">
@@ -16,6 +16,9 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<a href="/producto/{{$producto->slug}}/edit" class="btn btn-primary"> Editar</a>
+				{!!Form::open(['route'=>['producto.destroy',$producto->slug],'method'=>'DELETE'])!!}
+				{!!Form::submit('Eliminar',['class'=>'btn btn-danger'])!!}
+				{!!Form::close()!!}
 				</div>
 				
 
