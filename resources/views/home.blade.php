@@ -5,25 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Bienvenido</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-
-                     @if (session('alert'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('alert') }}
-                        </div>
-                    @endif
-                </div>
+                <div class="card-header text-center">Bienvenido</div>
+                   
+                    @include('common.sucess')
+ 
             </div>
         </div>
     </div>
+
 </div>
+<banners></banners>
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePedidoTable extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePedidoTable extends Migration
      */
     public function up()
     {
-        Schema::create('pedidos', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->increments('id');
-             $table->string('name');
-            $table->integer('cantidad');
+            $table->integer('user_id')->unsigned();
+            $table->integer('role_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePedidoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('role_user');
     }
 }

@@ -22,12 +22,11 @@ Route::get('pp/{name}/apellido/{ap}', 'PruebaController@index');
 Route::resource('/trainers','TrainerController');
 Route::resource('/shop','ShopController');
 Route::resource('/producto','ProductoController');
-Route::get('/games/create','GamesController@create');
-//Route::get('/producto/create','ProductoController@create');
-Route::get('/pedido/create','PedidoController@create');
+Route::resource('/pedido','PedidoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 Route::get('/login/{provider}/','Auth\SocialAuthController@redirectToProvider');
 Route::get('/login/{provider}/callback','Auth\SocialAuthController@handleProviderCallback');

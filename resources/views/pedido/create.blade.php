@@ -8,7 +8,7 @@
 		@csrf
 
 	<div class="form-group">
-		<label for="">Nombre de la pedido</label>
+		<label for="">Nombre del pedido</label>
 		<input type="text" name='name' class="form-control">
 	</div>
 	<button type="submit" class="btn btn-primary">Guardar</button>

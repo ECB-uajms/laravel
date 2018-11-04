@@ -19,11 +19,11 @@ class SocialAuthController extends Controller
             $createUser = User::firstOrCreate([
                 'email' =>$user->getEmail()
             ],[
-                'name'=>$user ->getEmail()
+                'name'=>$user ->getname()
             ]);
 
             auth()->login($createUser);
-            return redirect('/home')-> with ('alert', "Bienvenido $createUser ->name");
+            return redirect()->route('home')->with('status',"Bienvenido {$user ->name}");
         }catch(\GuzzleHttp\Exception\ClientException $e){
             dd($e);
         }
