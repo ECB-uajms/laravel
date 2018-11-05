@@ -23,6 +23,32 @@ Route::resource('/trainers','TrainerController');
 Route::resource('/shop','ShopController');
 Route::resource('/producto','ProductoController');
 Route::resource('/pedido','PedidoController');
+
+Route::get('cart/add/{producto}',[
+'as'=>'cart-add',
+'uses'=>'CartController@add'
+
+]);
+Route::get('cart/show',[
+'as'=>'cart-show',
+'uses'=>'CartController@show'
+
+]);
+Route::get('cart/delete/{producto}',[
+'as'=>'cart-delete',
+'uses'=>'CartController@delete'
+
+]);
+Route::get('cart/update/{producto}',[
+'as'=>'cart-update',
+'uses'=>'CartController@update'
+
+]);
+Route::get('cart/trash',[
+'as'=>'cart-trash',
+'uses'=>'CartController@trash'
+
+]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

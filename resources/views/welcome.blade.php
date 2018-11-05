@@ -24,8 +24,6 @@
     <body>
     <banners></banners>
        
-
-
     </body>
 @endsection
 

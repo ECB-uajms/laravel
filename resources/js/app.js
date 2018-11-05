@@ -18,6 +18,7 @@ window.Vue = require('vue');
 Vue.component('articles', require('./components/articles.vue'));
 
 Vue.component('banners', require('./components/bodycard.vue'));
+Vue.component('footers', require('./components/footer.vue'));
 const app = new Vue({
     el: '#app'
 });

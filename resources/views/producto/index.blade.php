@@ -13,14 +13,15 @@
 			src="images/{{$producto->image}}" style=" height=500px; width=400px;background-color: #EFEFEF; margin:8px;" alt="">
 				<div class="card-body">
 				<h5 class="card-tittle">{{$producto->name}}</h5>
-					<p class="card-text">{{$producto->cantidad}}</p>
+					<p class="card-text">{{$producto->precio}}</p>
 						
-						<a href="/producto/{{$producto->slug}}" class="btn btn-primary"> Ver mas...</a>
-	
+						<a href="/producto/{{$producto->slug}}" class="btn btn btn-info"> Ver mas...</a>
+						<a href="/cart/add/{{$producto->slug}}" class="btn btn btn-primary"> Comprar</a>
 				</div>
 		</div>
 	</div>
 
 	@endforeach
 </div>
+
 @endsection

@@ -10,7 +10,8 @@
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.1",
         "laravel/tinker": "^1.0",
-        "laravelcollective/html": "^5.4.0"
+        "laravelcollective/html": "^5.4.0",
+        "paypal/rest-api-sdk-php": "^1.13"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

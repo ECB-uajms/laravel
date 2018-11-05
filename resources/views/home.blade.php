@@ -15,4 +15,5 @@
 
 </div>
 <banners></banners>
+<footers></footers>
 @endsection

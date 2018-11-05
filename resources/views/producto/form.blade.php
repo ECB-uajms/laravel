@@ -18,8 +18,15 @@
 	</div>
 </div>
 <div class="form-group row">
-	{!! Form::label('cantidad','Cantidad',['class'=>'col-md-4 col-form-label text-md-right'])!!}
+	{!! Form::label('precio','Precio',['class'=>'col-md-4 col-form-label text-md-right'])!!}
 	<div class="col-md-6">
-	{!! Form::text('cantidad',null ,['class'=>'form-control'])!!}
+	{!! Form::number('precio',null ,['class'=>'form-control'])!!}
 	</div>
 </div>
+<div class="form-group row">
+	{!! Form::label('cantidad','Cantidad',['class'=>'col-md-4 col-form-label text-md-right'])!!}
+	<div class="col-md-6">
+	{!! Form::number('cantidad',null ,['class'=>'form-control'])!!}
+	</div>
+</div>
+
