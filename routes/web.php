@@ -39,7 +39,7 @@ Route::get('cart/delete/{producto}',[
 'uses'=>'CartController@delete'
 
 ]);
-Route::get('cart/update/{producto}',[
+Route::get('cart/update/{producto}/cantidad',[
 'as'=>'cart-update',
 'uses'=>'CartController@update'
 
@@ -49,7 +49,29 @@ Route::get('cart/trash',[
 'uses'=>'CartController@trash'
 
 ]);
+
 Auth::routes();
+Route::get('payment',[
+'as'=>'payment',
+'uses'=>'PaypalController@postPayment'
+
+]);
+Route::get('payment/status',[
+'as'=>'payment.status',
+'uses'=>'PaypalController@getPaymentStatus'
+
+]);
+
+
+Route::get('order-detail',[
+	'middleware'=>'auth',
+'as'=>'order-detail',
+'uses'=>'CartController@orderDetail'
+
+]);
+
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -50,17 +50,24 @@
 
 
 		</table>
+		<hr>
+		<h3><span class="label laber-success">
+			Total :{{number_format($total,2)}}
+		</span></h3>
+
+
 	</div>
 	@else
 			<h3><span class="label label-warning"> Tu carrito esta vacio :( </span> </h3>
 	@endif
 	<hr><p>
-		<a href="{{route('home')}}" class="btn btn-primary">
+		<a href="/producto" class="btn btn-primary">
 			<i class="fa fa-chevron-circle-left"></i> Seguir Comprando
 		</a>
-		<a href="{{route('home')}}" class="btn btn-primary">
+		<a href="{{route('order-detail')}}" class="btn btn-primary">
 			Checkout <i class="fa fa-chevron-circle-right"></i> 
 		</a>
+		
 	</p>
 
 </div>

@@ -47,6 +47,8 @@ class ProductoController extends Controller
         $producto ->name=$request ->input('name');
         $producto ->cantidad=$request ->input('cantidad');
         $producto ->slug=$request ->input('slug');
+        $producto ->precio=$request ->input('precio');
+        $producto ->detalle=$request->input('detalle');
         $producto ->image=$name;
         $producto-> save();
      
@@ -94,11 +96,15 @@ class ProductoController extends Controller
         if ($request->hasFile('image')) {
           $file =$request ->file('image');
           $name = time().$file->getClientOriginalName();
-             $producto ->image=$name;
+          $producto ->image=$name;
           $file->move(public_path().'/images/',$name);
          
        }
-       
+         $producto ->name=$request ->input('name');
+        $producto ->cantidad=$request ->input('cantidad');
+        $producto ->slug=$request ->input('slug');
+        $producto ->precio=$request ->input('precio');
+        $producto ->detalle=$request->input('detalle');
         $producto->save();
         return redirect()->route('producto.show',[$producto])->with('status','Producto Actualizado correctamente');
     }
